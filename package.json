@@ -1,0 +1,23 @@
+{
+  "name": "fem-advice-generator-app",
+  "version": "1.0.0",
+  "description": "This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+  "main": "main.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciej-kolodziejczak/fem-advice-generator-app.git"
+  },
+  "author": "Maciej Kołodziejczak <maciej.kolodziejczak@icloud.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/maciej-kolodziejczak/fem-advice-generator-app/issues"
+  },
+  "homepage": "https://github.com/maciej-kolodziejczak/fem-advice-generator-app#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
