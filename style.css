@@ -1,0 +1,242 @@
+/* #region Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* #endregion */
+
+/* #region Custom Properties */
+:root {
+  --c-primary-100: hsl(193, 38%, 86%);
+  --c-primary-500: hsl(150, 100%, 66%);
+
+  --c-neutral-300: hsl(217, 19%, 38%);
+  --c-neutral-500: hsl(217, 19%, 24%);
+  --c-neutral-800: hsl(218, 23%, 16%);
+
+  --f-family: Manrope, sans-serif;
+  --f-size-base: 16px;
+}
+/* #endregion */
+
+body {
+  font-family: var(--f-family);
+  font-size: var(--f-size-base);
+
+  color: var(--c-primary-100);
+  background-color: var(--c-neutral-800);
+
+  padding-inline: 1rem;
+
+  display: grid;
+  place-items: center;
+}
+
+.advice {
+  display: grid;
+  gap: 1.5rem;
+  place-items: center;
+
+
+  position: relative;
+
+  width: min(100%, 33.75rem);
+  padding-block: 2.5rem 4rem;
+  padding-inline: 1.5rem;
+
+  border-radius: 10px;
+  background-color: var(--c-neutral-500);
+
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .advice {
+    padding-block: 3rem 4.5rem;
+    padding-inline: 3rem;
+  }
+}
+
+.advice__title {
+  font-size: 0.6875rem;
+  letter-spacing: 3.46px;
+  text-transform: uppercase;
+
+  color: var(--c-primary-500);
+}
+
+@media (min-width: 480px) {
+  .advice__title {
+    font-size: 0.8125;
+  }
+}
+
+.advice__text {
+  font-size: 1.5rem;
+  letter-spacing: -0.26px;
+}
+
+@media (min-width: 480px) {
+  .advice__text {
+    font-size: 1.75rem;
+
+    margin-block-end: 1rem;
+  }
+}
+
+.advice__roll {
+  display: grid;
+  place-content: center;
+
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+
+  transform: translate(-50%, 50%);
+
+  width: 4rem;
+  height: 4rem;
+
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 transparent;
+
+  color: hsl(218, 23%, 16%);
+  background-color:hsl(150, 100%, 66%);
+
+  cursor: pointer;
+  overflow: hidden;
+  
+  transition: 
+    box-shadow .2s cubic-bezier(0.165, 0.840, 0.440, 1.000),
+    transform .2s cubic-bezier(0.165, 0.840, 0.440, 1.000);
+  transform-origin: center center;
+}
+
+.advice__roll:active {
+  transform: scale(0.9) translate(-50%, 50%);
+}
+
+@media (hover) {
+  .advice__roll:hover {
+    box-shadow: 0 0 40px 0 hsl(150, 100%, 66%);
+  }
+}
+
+/* #region Button animation */
+.advice__roll img {
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
+}
+
+.advice__roll.animate-in img {
+  animation-name: animateIn;
+}
+
+.advice__roll.animate-out img {
+  animation-name: animateOut;
+}
+
+@keyframes animateIn {
+  0% {
+    transform: translateX(-300%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animateOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+/* #endregion */
+
+/* #region Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: var(--c-primary-500);
+}
+/* #endregion */
