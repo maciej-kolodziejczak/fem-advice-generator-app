@@ -4,7 +4,7 @@
   "description": "This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
   "main": "main.js",
   "scripts": {
-    "build": "tsc",
+    "build": "postcss src/main.css --dir dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/maciej-kolodziejczak/fem-advice-generator-app#readme",
   "devDependencies": {
+    "postcss": "^8.4.12",
+    "postcss-cli": "^9.1.0",
     "typescript": "^4.6.3"
   }
 }
