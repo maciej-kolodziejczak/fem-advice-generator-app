@@ -211,7 +211,7 @@ body {
 
 @keyframes animateIn {
   0% {
-    transform: translateX(-300%);
+    transform: translateX(-150%) rotateY(-90deg) skewX(-10deg);
   }
 
   100% {
@@ -225,7 +225,7 @@ body {
   }
 
   100% {
-    transform: translateX(300%);
+    transform: translateX(150%) rotateY(90deg) skewX(10deg);
   }
 }
 /* #endregion */
